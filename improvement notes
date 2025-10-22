@@ -1,0 +1,102 @@
+MFF improvement ideas
+Satyam Dwivedi
+Sep 24, 2025
+Objective
+Optimize MFF for Advertiser and User Value
+Background
+Following are the key performance metrics of MFF at 45%LL experiment
+Metric
+MFF
+LTA Unicard
+Impression rate
+1.6M / day
+16M / day
+Click through rate (CTR)
+4.2%
+17.2%
+Conversion rate (CvR)
+20.7%
+22.2%
+Click split (LTAC / VSTAC)
+0.24
+2.41
+Cost per click (CPC)
+$1.68
+$1.52
+
+
+From the above metrics, we can observe that although both MFF and LTA unicards have similar UI, the LTA unicard outperforms MFF in all the key metrics.
+Metric Impact
+Here's how improving each key metric creates value:
+Impression Rate: More impressions accelerate the model's learning process. This allows the model to converge on its true performance more quickly.
+Click-Through Rate (CTR): A higher CTR indicates greater relevance for users and directly increases revenue for Google.
+Conversion Rate (CvR): This is the most critical metric for advertisers, as it reflects the return on their ad spend and the format's ability to drive business results.
+Click Split (Long / Short Clicks): A higher ratio of long clicks proves we are delivering a valuable post-click experience for users.
+Cost Per Click (CPC): This metric balances Google's revenue with advertiser value. It must be managed carefully to prevent churn.
+Proposed Ideas
+The following ideas are categorized by the primary metric they aim to improve. They are prioritized based on an analysis of their potential impact versus the required effort.
+Legend
+P1: Prioritising now
+P2: Will prioritise next
+P3: Not prioritised
+Effort sizing: S, M, L, XL
+need inputs from product / UX
+need alignment from product / UX
+Ideas to Improve Impression Rate
+[L] Introduce a High Skip-Value Trumpable Format: Co-trigger a trumpable format with a high skip value alongside the base MFF format. This would artificially boost the pCTR incentivizing serving models to select the format more frequently.
+[L] Expand Eligibility Criteria: Broaden MFF eligibility beyond the 'message' goal to also include campaigns with 'Call only', 'LFA only' or 'Call + LFA' goals.
+[M] Support Pinned Headlines: Remove the current restriction that marks MFF as ineligible for ads with pinned headlines, or update the Ad UI to display the pinned headline within the format.
+Background: 62.5% of potential MFF creatives are currently disqualified because they have a pinned headline. 
+Q1. Can we show MFF even for campaigns with pinned headlines?
+Q2. Can we update the MFF UI to accommodate pinned headlines?
+[M] Identify Fallback Images: Enable MFF for campaigns that lack AIE or GMB images by identifying possible fallback images, such as a map tile or business logo.
+Background: 40.6% of potential MFF campaigns are currently disqualified because they don’t have AIE or GMB images.
+Q1. Can we identify a fallback for campaigns that don’t have AIE or GMB? 
+Business logo, Map tile
+[L] Implement MIA Multiplier: Implement an MIA multiplier to increase the effective bid for MFF in the ad auction.
+Ideas to Improve Click-Through Rate (CTR)
+[L] Splitting MFF into Trumpable Sub-formats: [proposal doc] By splitting MFF into components, the serving model can learn which individual elements are most effective, allowing the auction to optimize for higher-CTR combinations.
+[L] Enable Co-triggering with Other Assets: Allow MFF to be served with other existing formats or assets creating additional click targets on the ad.
+Background: We've observed that for over 88% of MFF-eligible impressions, other assets—such as Sitelinks, Favicon, Callouts, and Structured Snippets—are also available.
+Q1. Which of these assets could be shown alongside MFF to add the most value to the format?
+Q2. What would the new UI, incorporating these assets, look like? 
+[M] Refine Eligibility by User Intent: Restrict MFF to queries with high messaging intent, ensuring the format is shown on the most relevant queries.
+[XL] Enrich Ad with More Data: Integrate additional data from sources like the landing page, message_url, GMB, BSP, or GMC to make the ad more informative and useful for users.
+Q1. What data sources are available for us to use?
+Q2. Are there examples of other ads that use data from these sources?
+Q3. What approvals are required to use this data in our ads?
+[S] Enforce Business Name Requirement: Make the business name asset a requirement for MFF eligibility, as experiments show ads with business names have a higher CTR than those with a root domain fallback.
+[M] Experiment with Longer Headlines: Test longer headlines, including a two-line variation. Experiments have shown a correlation between headline length and CTR.
+Background: For MFF ads in the first top-slot position, headlines with 20 or more characters achieve a 2.6% higher CTR than headlines with fewer than 5 characters.
+Q1. Can we modify the business name field? For example, could we append additional text to it (similar to the LTA unicard format) or replace it with a longer text, such as the ad headline?
+Q2. Can we also experiment with two-line headlines? If so, would this require Saux approval?
+[XL] Update Format UX: Redesign the user experience to make the format more visually appealing and engaging.
+[M] Provide Advertiser Recommendations: Suggest advertisers to add a business name asset to improve performance.
+[XL] Improve Image Quality: Filter out low-quality AIE images and explore fetching higher-quality images from other available sources.
+Ideas to Improve Conversion Rate (CvR)
+[L] Add More Post-Click Actions: Add more conversion actions on the post-click page to provide users with more options to convert.
+[L] Add More Trust Signals: Display additional trust signals in the ad—such as average response time, favicons, or other business details—to build user confidence that might lead to increased lead submissions.
+Q1. What specific data points can we show as trust signals?
+Url, favicon
+Advertiser rating
+“Receives 1000 messages per day”
+Average response time
+Verification status and whatsapp business name, image etc by scraping whatsapp url
+Q2. What could be the sources for this information?
+Q3. How could these signals be displayed in the ad UI?
+Ideas to Improve Click Split (Long/Short Clicks)
+[L] Add Longer-Engagement Actions: Add actions to the post-click page that require longer user engagement, such as Call, LFA, or Website links.
+[M] Implement an Image Viewer: Allow users to click on an image to open a viewer, increasing time spent on the post-click page.
+[XL] Provide Richer Advertiser Information in PCP: Add new, detailed advertiser information to the post-click page—beyond what is shown on the SRP—to hold user attention and provide more value to the user.
+Q1. What other data can we display on the post click page?
+Main section from the website in the about section
+Images from advertiser website
+Products / service details from website / GMB
+[L] Good Click Modeling for MFF: Update the "good click" thresholds for MFF clicks. The current thresholds are trained for website visits, but the duration of a good user interaction could be very different for message clicks.
+[XL] Redesign Post-Click UX: Redesign the post-click experience to be more engaging and interactive.
+Ideas to Improve Cost Per Click (CPC)
+[M] Identify Optimal Bidding Strategies: Analyze performance data to identify and recommend the most effective bidding strategies for this format.
+[XL] Boost MFF LTV: Boost LTV for MFF in auction on queries with very high message intent. This will allow MFF to win on high message intent queries with lower bid.
+[L] Enable MIA for MFF: With MIA we can control the bids for MFF clicks.
+
+
