@@ -116,7 +116,7 @@ We propose adding the missing elements that competitors already have:
 - **Favicon** (business logo/icon for brand recognition)
 
 **Why It Works**:
-- More click targets = Higher CTR (proven: sitelinks add +10-15% CTR)
+- More click targets = Higher CTR (industry benchmark: sitelinks add +10-15% CTR)
 - More information = Better qualified clicks
 - Uses existing advertiser content (no new work for them)
 
@@ -210,19 +210,23 @@ We analyzed **9.98 million** MFF-eligible impressions to see what assets are ava
 
 ### 2. Industry Benchmarks Support Impact Estimates
 
-How similar features performed in other ad formats (industry benchmarks):
+**Commonly-Cited Industry Benchmarks** (not verified with primary sources):
 
-| Feature | Product | Observed Impact |
-|---------|---------|----------------|
+| Feature | Product | Industry Benchmark |
+|---------|---------|-------------------|
 | Sitelinks | Google Search Ads | +10-15% CTR |
 | Star Ratings | Google Seller Ratings | +10% CTR, +8% CvR |
 | Trust Badges | Facebook Lead Ads | +8-12% CTR |
 | Response Time | Meta Messenger Ads | +12% CvR |
 | Verification Badge | Yelp Ads | +5-8% CTR |
 
-**Note**: These are industry benchmarks from other ad formats. MFF-specific impact will be validated through A/B testing (Weeks 7-9 for assets, Weeks 12-15 for trust signals).
+**Important Caveats**:
+- These are widely-cited industry benchmarks, not verified studies with primary sources
+- Impact may differ for MFF due to format differences (non-clickable headline, message-primary)
+- MFF-specific impact will be measured through A/B testing (Weeks 7-9 for assets, Weeks 12-15 for trust signals)
+- These benchmarks inform our estimates but do not guarantee similar results
 
-**Estimated Range**: Based on these benchmarks, we project +40-70% combined CTR lift (base case: +55%), though actual results may vary.
+**Estimated Range**: Based on these industry benchmarks, we project +40-70% combined CTR lift (base case: +55%), though actual MFF results may vary significantly.
 
 ---
 
@@ -430,18 +434,18 @@ This is the critical assumption. Let me break it down by feature:
 ##### Feature 1: Assets (+15-25% CTR)
 
 **Sitelinks**:
-- **Benchmark**: Google Search Ads data shows sitelinks add **+10-15% CTR**
-- **Source**: Industry-standard metric, well-documented in ads literature
+- **Industry Benchmark**: Sitelinks add **+10-15% CTR** (commonly cited for Google Search Ads)
+- **Source**: Industry-standard metric, not verified with primary source
 - **Why it works**: More click targets, more ways to engage, better qualified clicks
 
 **Callouts**:
-- **Benchmark**: Industry data shows callouts add **+5-8% CTR**
-- **Source**: Competitive analysis (Facebook, LinkedIn ads with callouts)
+- **Industry Benchmark**: Callouts add **+5-8% CTR**
+- **Source**: Commonly cited in ads literature, not verified with primary source
 - **Why it works**: More information increases perceived relevance and trust
 
 **Favicon**:
-- **Benchmark**: Brand icons add **+3-5% CTR**
-- **Source**: Multiple studies on brand recognition in ads
+- **Industry Benchmark**: Brand icons add **+3-5% CTR**
+- **Source**: Commonly cited in ads literature, not verified with primary source
 - **Why it works**: Brand recognition, legitimacy signal, visual appeal
 
 **Combined Assets Effect**:
@@ -455,19 +459,19 @@ Midpoint used: 20%
 ##### Feature 2: Trust Signals (+10-15% CTR)
 
 **Star Ratings**:
-- **Benchmark**: Google Seller Ratings show **+10% CTR, +8% CvR**
-- **Source**: Google Ads internal data (publicly reported in case studies)
+- **Industry Benchmark**: Star ratings show **+10% CTR, +8% CvR** (Google Seller Ratings)
+- **Source**: Commonly cited from Google Ads case studies, not verified with primary source
 - **Why it works**: Social proof, reduces perceived risk, quality indicator
 
 **Verification Badge**:
-- **Benchmark**: Facebook Lead Ads trust badges add **+8-12% CTR**
-- **Benchmark**: Yelp "Claimed" badge adds **+5-8% CTR**
-- **Source**: Competitive analysis, published case studies
+- **Industry Benchmark**: Trust badges add **+8-12% CTR** (Facebook Lead Ads)
+- **Industry Benchmark**: "Claimed" badge adds **+5-8% CTR** (Yelp Ads)
+- **Source**: Commonly cited in industry, not verified with primary sources
 - **Why it works**: Legitimacy signal, reduces fraud concerns
 
 **Response Time**:
-- **Benchmark**: Meta Messenger "responds quickly" badge adds **+3-5% CTR**
-- **Source**: Meta's published advertiser guidance
+- **Industry Benchmark**: "Responds quickly" badge adds **+3-5% CTR** (Meta Messenger Ads)
+- **Source**: Commonly cited in industry, not verified with primary source
 - **Why it works**: Addresses common user concern about response uncertainty
 
 **Combined Trust Signals Effect**:
@@ -633,8 +637,8 @@ Let me be explicit about confidence in each projection:
 
 | Metric | Projection | Confidence | Reasoning |
 |--------|------------|------------|-----------|
-| **Asset CTR Lift** | +15-25% | **High (80%)** | Strong industry benchmarks, proven in search ads |
-| **Trust Signal CTR Lift** | +10-15% | **High (75%)** | Multiple competitive benchmarks, user research validates demand |
+| **Asset CTR Lift** | +15-25% | **Medium (60%)** | Industry benchmarks from search ads (unverified sources) |
+| **Trust Signal CTR Lift** | +10-15% | **Medium (55%)** | Industry benchmarks from competitor formats (unverified sources) |
 | **Synergy Effect** | 1.2-1.5x | **Medium (50%)** | Logical but not proven for MFF specifically |
 | **Combined CTR** | 6.5% | **Medium (50-60%)** | Likely in 5.5-7.0% range, 6.5% is midpoint |
 | **Impression Growth** | +25% | **Medium (60%)** | Mechanism is sound, magnitude uncertain (10-40% range) |
@@ -840,11 +844,11 @@ Given the uncertainty in the 55% estimate, I recommend:
 **Incremental**: +$40M/year
 
 **Key Assumptions**:
-1. ✅ Assets improve CTR by +15-25% (high confidence, industry benchmarks)
-2. ✅ Trust signals improve CTR by +10-15% (high confidence, competitive data)
+1. 🟡 Assets improve CTR by +15-25% (industry benchmarks, unverified sources)
+2. 🟡 Trust signals improve CTR by +10-15% (industry benchmarks, unverified sources)
 3. 🟡 Synergy factor of 1.2-1.5x (medium confidence, logical but unproven)
 4. 🟡 Combined effect: +50-70% CTR lift (medium confidence, could be 40-80%)
-5. ✅ Better CTR → +25% impressions (medium-high confidence, auction mechanics)
+5. 🟡 Better CTR → +25% impressions (medium confidence, auction mechanics)
 6. 🟡 CPC stable at ~$1.70 (medium confidence, market dynamics)
 
 **Confidence in $40M Incremental**:
