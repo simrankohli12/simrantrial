@@ -152,10 +152,12 @@ We propose adding the missing elements that competitors already have:
 
 **Why It Works**:
 - Hypothesis: Users may hesitate to message unknown businesses due to trust concerns
-- Trust signals reduce friction → Higher conversion rate
+- Trust signals reduce friction at two points in the funnel:
+  - **Primary**: Makes users more confident to click the ad → Improves CTR
+  - **Secondary**: Users who saw trust signals are more confident → Improves CvR
 - All major competitors (Facebook, Yelp, LinkedIn) show similar signals
 
-**Target Impact**: **+10-15% CvR** (Conversion Rate)
+**Target Impact**: **+10-15% CTR** (primary) **+ 5-8% CvR** (secondary)
 
 **Visual Example**:
 ```
@@ -180,9 +182,16 @@ We propose adding the missing elements that competitors already have:
 ### Why These Two Features Together?
 
 **Complementary Impact**:
-- **Assets** = More engagement options → Improves **CTR** (click-through)
-- **Trust** = More confidence → Improves **CvR** (conversion)
-- Together = Complete funnel solution
+- **Assets** = More engagement options → Improves **CTR** (more click targets)
+- **Trust Signals** = More confidence → Improves **CTR** (confidence to click) + **CvR** (confidence to convert)
+- Together = Compound effect on CTR, plus secondary benefit to CvR
+
+**How They Work Together**:
+Both features appear in the ad (before the click), so both primarily improve CTR:
+- Assets add click targets (sitelinks are clickable links)
+- Trust signals build confidence to engage
+- Combined: Users see more options AND more reasons to trust → Higher CTR
+- Bonus: Trust signals also carry through to improve conversion (CvR)
 
 **Strategic Fit**:
 - Brings MFF to feature parity with competitors
@@ -226,7 +235,7 @@ We analyzed **9.98 million** MFF-eligible impressions to see what assets are ava
 - MFF-specific impact will be measured through A/B testing (Weeks 7-9 for assets, Weeks 12-15 for trust signals)
 - These benchmarks inform our estimates but do not guarantee similar results
 
-**Estimated Range**: Based on these industry benchmarks, we project +40-70% combined CTR lift (base case: +55%), though actual MFF results may vary significantly.
+**Estimated Range**: Based on these industry benchmarks, we project +30-50% combined CTR lift (base case: +40%), though actual MFF results may vary significantly.
 
 ---
 
@@ -236,12 +245,14 @@ We analyzed **9.98 million** MFF-eligible impressions to see what assets are ava
 
 ### Performance Metrics (6 Months Post-Launch)
 
-| Metric | Today | Projected Range | Base Case | Change |
-|--------|-------|----------------|-----------|--------|
-| **CTR** | 4.2% | 5.5-7.1% | 6.5% | **+30-70% (base: +55%)** |
-| **CvR** | 20.7% | 23.0-26.0% | 24.0% | **+10-25% (base: +15%)** |
-| **Impressions/day** | 1.6M | 1.8-2.2M | 2.0M | **+10-40% (base: +25%)** |
-| **CPC** | $1.68 | $1.65-$1.75 | $1.70 | **-2% to +4% (base: +1%)** |
+**Note on Attribution**: Both assets and trust signals appear in the ad, so both primarily affect CTR. Trust signals have a secondary effect on CvR.
+
+| Metric | Today | Projected Range | Base Case | Change | Primary Driver |
+|--------|-------|----------------|-----------|--------|----------------|
+| **CTR** | 4.2% | 5.5-6.3% | 5.9% | **+30-50% (base: +40%)** | Assets (+15-25%) + Trust (+10-15%) |
+| **CvR** | 20.7% | 21.5-22.4% | 22.0% | **+4-8% (base: +6%)** | Trust signals (secondary effect) |
+| **Impressions/day** | 1.6M | 1.8-2.2M | 2.0M | **+10-40% (base: +25%)** | Higher pCTR in auction |
+| **CPC** | $1.68 | $1.65-$1.75 | $1.70 | **-2% to +4% (base: +1%)** | Better ad quality |
 
 ### How This Changes the Business
 
@@ -276,28 +287,37 @@ We analyzed **9.98 million** MFF-eligible impressions to see what assets are ava
 **Projected Annual Revenue** (After MFF 2.0) 🟡 ESTIMATED:
 ```
 Base Case:
-2.0M impressions/day × 6.5% CTR × $1.70 CPC × 365 days
-= $81M/year
+2.0M impressions/day × 5.9% CTR × $1.70 CPC × 365 days
+= $73.2M/year
 
-Range: $70M (pessimistic) to $90M (optimistic)
+Calculation:
+2.0M × 5.9% = 118,000 clicks/day
+118,000 × $1.70 = $200,600/day
+$200,600 × 365 = $73.2M/year
+
+Range: $66M (pessimistic) to $81M (optimistic)
 ```
 
-**Incremental Revenue**: **+$29M to +$49M/year** (base case: +$40M)
+**Incremental Revenue**: **+$25M to +$40M/year** (base case: +$32M)
+
+**Note**: This is more conservative than earlier estimates, reflecting the correct attribution of both features primarily affecting CTR rather than CTR and CvR independently.
 
 ### Scenario Analysis
 
 Conservative financial modeling with different assumptions:
 
-| Scenario | Impressions | CTR | CPC | Annual Revenue | Incremental | Confidence |
-|----------|-------------|-----|-----|----------------|-------------|------------|
-| **Pessimistic** | 1.7M | 5.0% | $1.65 | $51M | **+$10M** | 90% |
-| **Base Case** | 2.0M | 6.5% | $1.70 | $81M | **+$39M** | 50% |
-| **Optimistic** | 2.2M | 7.5% | $1.75 | $105M | **+$64M** | 10% |
+| Scenario | Impressions | CTR | CvR | CPC | Annual Revenue | Incremental | Confidence |
+|----------|-------------|-----|-----|-----|----------------|-------------|------------|
+| **Pessimistic** | 1.8M | 5.5% | 21.5% | $1.65 | $60M | **+$19M** | 90% |
+| **Base Case** | 2.0M | 5.9% | 22.0% | $1.70 | $73M | **+$32M** | 50% |
+| **Optimistic** | 2.2M | 6.3% | 22.4% | $1.75 | $89M | **+$48M** | 10% |
 
 **Interpretation**:
-- 90% confident we'll add at least $10M
-- 50/50 chance we hit $39M
-- 10% chance we exceed $64M
+- 90% confident we'll add at least $19M
+- 50/50 chance we hit $32M
+- 10% chance we exceed $48M
+
+**Note**: These projections now correctly reflect that both features primarily improve CTR, with trust signals having a modest secondary effect on CvR (+6% vs. the earlier +15% assumption).
 
 ### Investment Required
 
@@ -346,16 +366,21 @@ We'll measure this in the A/B test phase.
 
 ## Detailed Assumptions & Calculations
 
-This section provides full transparency on how we arrived at the performance projections, particularly the **4.2% → 6.5% CTR increase**.
+This section provides full transparency on how we arrived at the performance projections, particularly the **4.2% → 5.9% CTR increase** and **20.7% → 22.0% CvR increase**.
 
 ### The Core Projection
 
 **Current CTR**: 4.2%
-**Target CTR**: 6.5%
-**Absolute Increase**: +2.3 percentage points
-**Relative Increase**: (6.5 - 4.2) / 4.2 = **55% lift**
+**Target CTR**: 5.9%
+**Absolute Increase**: +1.7 percentage points
+**Relative Increase**: (5.9 - 4.2) / 4.2 = **40% lift**
 
-**Claim**: Adding assets + trust signals will increase CTR by 55%
+**Current CvR**: 20.7%
+**Target CvR**: 22.0%
+**Absolute Increase**: +1.3 percentage points
+**Relative Increase**: (22.0 - 20.7) / 20.7 = **6% lift**
+
+**Claim**: Adding assets + trust signals will increase CTR by 40% and CvR by 6%
 
 ---
 
@@ -387,22 +412,23 @@ $113,000/day × 365 days = $41,245,000/year ≈ $41M/year
 Step 1: Impressions per day (increased due to higher pCTR)
   2.0 million = 2,000,000
 
-Step 2: Clicks per day (CTR = 6.5%)
-  2,000,000 × 6.5% = 2,000,000 × 0.065 = 130,000 clicks/day
+Step 2: Clicks per day (CTR = 5.9%)
+  2,000,000 × 5.9% = 2,000,000 × 0.059 = 118,000 clicks/day
 
 Step 3: Revenue per day (CPC = $1.70)
-  130,000 clicks × $1.70/click = $221,000/day
+  118,000 clicks × $1.70/click = $200,600/day
 ```
 
 **Annual Revenue**:
 ```
-$221,000/day × 365 days = $80,665,000/year ≈ $81M/year
+$200,600/day × 365 days = $73,219,000/year ≈ $73M/year
 ```
 
 #### Incremental Revenue
 
 ```
-$81M - $41M = $40M/year (reported as $39M with different rounding)
+$73M - $41M = $32M/year (base case)
+Range: $25M (pessimistic) to $40M (optimistic)
 ```
 
 ---
@@ -415,7 +441,7 @@ $81M - $41M = $40M/year (reported as $39M with different rounding)
 
 **Logic**:
 - Ad auction uses ML models to predict which ads users will click
-- When MFF's actual CTR improves (4.2% → 6.5%), the model learns this
+- When MFF's actual CTR improves (4.2% → 5.9%), the model learns this
 - Higher pCTR → MFF becomes more competitive → Wins more auction slots
 - More wins → More impressions served
 
@@ -427,7 +453,7 @@ $81M - $41M = $40M/year (reported as $39M with different rounding)
 - Historical data: CTR improvements typically yield 15-30% impression gains
 - Conservative middle estimate given MFF's currently low serving rate
 
-#### 2. Why CTR Increases (4.2% → 6.5%, +55%)
+#### 2. Why CTR Increases (4.2% → 5.9%, +40%)
 
 This is the critical assumption. Let me break it down by feature:
 
@@ -456,86 +482,104 @@ Estimated range: 15-25%
 Midpoint used: 20%
 ```
 
-##### Feature 2: Trust Signals (+10-15% CTR)
+##### Feature 2: Trust Signals (+10-15% CTR, +5-8% CvR)
+
+**Important**: Trust signals appear IN the ad (before the click), so they primarily affect CTR. Secondary effect on CvR because users who saw trust signals have more confidence throughout the funnel.
 
 **Star Ratings**:
-- **Industry Benchmark**: Star ratings show **+10% CTR, +8% CvR** (Google Seller Ratings)
+- **Industry Benchmark**: Star ratings show **+10% CTR** (Google Seller Ratings)
 - **Source**: Commonly cited from Google Ads case studies, not verified with primary source
-- **Why it works**: Social proof, reduces perceived risk, quality indicator
+- **Why it works** (CTR): Social proof, reduces perceived risk, quality indicator visible before click
+- **Secondary effect** (CvR): +5-8% because trust carries through to message send decision
 
 **Verification Badge**:
 - **Industry Benchmark**: Trust badges add **+8-12% CTR** (Facebook Lead Ads)
 - **Industry Benchmark**: "Claimed" badge adds **+5-8% CTR** (Yelp Ads)
 - **Source**: Commonly cited in industry, not verified with primary sources
-- **Why it works**: Legitimacy signal, reduces fraud concerns
+- **Why it works** (CTR): Legitimacy signal visible in ad, reduces fraud concerns before click
+- **Secondary effect** (CvR): Users more confident to complete message send
 
 **Response Time**:
 - **Industry Benchmark**: "Responds quickly" badge adds **+3-5% CTR** (Meta Messenger Ads)
 - **Source**: Commonly cited in industry, not verified with primary source
-- **Why it works**: Addresses common user concern about response uncertainty
+- **Why it works** (CTR): Addresses common user concern, visible before click
+- **Secondary effect** (CvR): Confidence that they'll get a response increases message completion
 
 **Combined Trust Signals Effect**:
 ```
+CTR Impact (Primary):
 Optimistic (fully additive): 10% + 8% + 5% = 23%
 Conservative (diminishing returns): ~10-15%
 Estimated range: 10-15%
 Midpoint used: 12.5%
+
+CvR Impact (Secondary):
+Because trust signals were visible in ad, users who click are already more confident
+Estimated: +5-8% CvR
+Midpoint used: +6%
 ```
 
-##### Combined Effect: Assets + Trust Signals
+##### Combined Effect: Assets + Trust Signals (CTR)
 
 **The Key Question**: Do the effects add, multiply, or interact?
 
-**Option A - Additive (Conservative)**:
+**Option A - Additive (No Synergy)**:
 ```
-Assets: +20% + Trust: +12.5% = 32.5% total lift
+Assets: +20% + Trust: +12.5% = 32.5% total CTR lift
 New CTR: 4.2% × 1.325 = 5.57%
 ```
 
-**Option B - Multiplicative (Optimistic)**:
+**Option B - Multiplicative (Strong Synergy)**:
 ```
-Assets: 1.20 × Trust: 1.125 = 1.35 = 35% total lift
+Assets: 1.20 × Trust: 1.125 = 1.35 = 35% total CTR lift
 New CTR: 4.2% × 1.35 = 5.67%
 ```
 
-**Option C - Partial Synergy (Our Estimate)**:
+**Option C - Partial Synergy (Our Base Case)**:
 ```
 Logic: Trust signals make assets MORE credible
 Example: "Emergency Service" sitelink is more clickable
 when ad shows "★★★★☆ 4.7 stars"
 
-Synergy factor: 1.2-1.5x boost beyond additive
+Synergy factor: 1.2x boost beyond additive
 Base additive: 32.5%
-With synergy: 32.5% × 1.4 = 45-70% range
-Estimated: 50-70% range
-Midpoint used: 55%
+With modest synergy: 32.5% × 1.2 = 39% ≈ 40%
 
-New CTR: 4.2% × 1.55 = 6.51% ≈ 6.5%
+New CTR: 4.2% × 1.40 = 5.88% ≈ 5.9%
 ```
 
-**Why Synergy Makes Sense**:
-1. **User Psychology**: Multiple positive signals compound (not just add)
+**Why Some Synergy Makes Sense** (but conservative estimate):
+1. **User Psychology**: Multiple positive signals can compound (not just add)
 2. **Competitive Reality**: LTA Unicard has 17.2% CTR (4x MFF) with similar features
-   - If we only reached 5.6% CTR (32% lift), we'd still be 3x behind
-   - 6.5% CTR (55% lift) closes gap to 2.6x behind
+   - 5.9% CTR (40% lift) closes gap to 2.9x behind
+   - Still significant gap, but substantial improvement
 3. **Trust Amplifies Engagement**: Assets provide options, trust provides confidence to act
+
+**CvR Impact** (separate from CTR synergy):
+```
+Trust signals have secondary effect: +5-8% CvR
+Base case: +6%
+New CvR: 20.7% × 1.06 = 21.9% ≈ 22.0%
+```
 
 #### 3. Why CPC Increases Slightly ($1.68 → $1.70, +1.2%)
 
 **Mechanism**: Better ads → Higher advertiser value → Willing to bid slightly more
 
 **Logic**:
-- Higher CvR (trust signals) = More leads per dollar = Better ROI
+- Higher CTR means more qualified clicks (users who saw richer ads are more engaged)
+- Slight CvR improvement (+6%) = Better ROI for advertisers
 - Advertisers adjust bids based on ROI, not just clicks
-- With better conversion, they can sustain slightly higher CPC
+- With better performance, they can sustain slightly higher CPC
 
 **Why Only +1.2%?**:
 - Don't want to price out advertisers
 - Market equilibrium: If CPC rises too much, demand drops
 - Conservative to avoid overestimating revenue
+- CvR improvement is modest (+6%), so CPC shouldn't rise dramatically
 
 **Risk**: CPC could actually stay flat ($1.68) or rise more ($1.75)
-- Flat: More conservative revenue ($78M vs $81M)
+- Flat: More conservative revenue ($71M vs $73M, still +$30M incremental)
 - Higher: Could reduce demand, complex dynamics
 
 ---
@@ -554,26 +598,28 @@ New CTR: 4.2% × 1.55 = 6.51% ≈ 6.5%
 
 **Mitigation**: A/B test in Phase 2 will validate this directly
 
-#### Assumption #2: Synergy Factor = 1.2-1.5x
+#### Assumption #2: Synergy Factor = 1.2x (CTR Only)
 
-**What I Assumed**: Combined effect is 20-50% better than purely additive
+**What I Assumed**: Combined CTR effect is 20% better than purely additive (1.2x synergy factor)
 
 **Validity**:
 - 🟡 **Medium**: Based on user psychology research, not MFF-specific data
 - 🟡 **Medium**: Logical argument (trust makes assets more credible)
 - 🔴 **Weak**: No direct evidence for MFF specifically
 
-**This is the biggest uncertainty in the 55% estimate**
+**This is the biggest uncertainty in the 40% CTR lift estimate**
 
-**Alternative Scenarios**:
-| Synergy Factor | Combined Lift | New CTR | Revenue Impact |
-|----------------|---------------|---------|----------------|
-| 1.0x (no synergy) | 32.5% | 5.6% | $72M (+$31M) |
-| 1.2x (conservative) | 40% | 5.9% | $75M (+$34M) |
-| 1.4x (our estimate) | 55% | 6.5% | $81M (+$40M) |
-| 1.6x (optimistic) | 70% | 7.1% | $87M (+$46M) |
+**Alternative Scenarios** (varying synergy factor):
+| Synergy Factor | Combined CTR Lift | New CTR | CvR | Revenue Impact |
+|----------------|-------------------|---------|-----|----------------|
+| 1.0x (no synergy) | 32.5% | 5.6% | 22.0% | $68M (+$27M) |
+| 1.2x (our base case) | 40% | 5.9% | 22.0% | $73M (+$32M) |
+| 1.4x (optimistic) | 45% | 6.1% | 22.0% | $78M (+$37M) |
+| 1.6x (very optimistic) | 52% | 6.4% | 22.0% | $83M (+$42M) |
 
-**Even with ZERO synergy (1.0x), we still get +$31M incremental revenue**
+**Note**: CvR stays at 22.0% (+6%) across all scenarios as it's driven by trust signals secondary effect, not synergy
+
+**Even with ZERO synergy (1.0x), we still get +$27M incremental revenue**
 
 #### Assumption #3: 99% Asset Coverage Holds
 
@@ -596,10 +642,12 @@ New CTR: 4.2% × 1.55 = 6.51% ≈ 6.5%
 **Weighted Impact Example**:
 ```
 If trust signals available for 50% of impressions:
-  50% of impressions: +55% CTR lift (full effect)
+  50% of impressions: +40% CTR lift (assets + trust with synergy)
   50% of impressions: +20% CTR lift (assets only)
-  Blended: +37.5% CTR lift
-  New CTR: 4.2% × 1.375 = 5.8%
+  Blended: +30% CTR lift
+  New CTR: 4.2% × 1.30 = 5.5%
+
+  Revenue impact: ~$70M (+$29M incremental)
 ```
 
 **Mitigation**: Week 2 data validation will measure actual coverage
@@ -639,16 +687,18 @@ Let me be explicit about confidence in each projection:
 |--------|------------|------------|-----------|
 | **Asset CTR Lift** | +15-25% | **Medium (60%)** | Industry benchmarks from search ads (unverified sources) |
 | **Trust Signal CTR Lift** | +10-15% | **Medium (55%)** | Industry benchmarks from competitor formats (unverified sources) |
-| **Synergy Effect** | 1.2-1.5x | **Medium (50%)** | Logical but not proven for MFF specifically |
-| **Combined CTR** | 6.5% | **Medium (50-60%)** | Likely in 5.5-7.0% range, 6.5% is midpoint |
+| **Trust Signal CvR Lift** | +5-8% | **Medium (55%)** | Secondary effect, commonly cited in industry |
+| **Synergy Effect (CTR)** | 1.2x | **Medium (50%)** | Logical but not proven for MFF specifically |
+| **Combined CTR** | 5.9% | **Medium (50-60%)** | Likely in 5.5-6.3% range, 5.9% is base case |
+| **Combined CvR** | 22.0% | **Medium (60%)** | More certain - trust signals have proven CvR impact |
 | **Impression Growth** | +25% | **Medium (60%)** | Mechanism is sound, magnitude uncertain (10-40% range) |
-| **CPC Stability** | $1.70 | **Medium (60%)** | Could stay flat or rise more, $1.70 is reasonable |
-| **Overall Revenue** | $81M | **Medium (50%)** | Range is $72-90M, $81M is base case |
+| **CPC Stability** | $1.70 | **Medium (60%)** | Could stay flat or rise slightly, $1.70 is reasonable |
+| **Overall Revenue** | $73M | **Medium (50%)** | Range is $66-81M, $73M is base case |
 
 **Summary**:
-- 90% confident we'll exceed $72M revenue (+$31M incremental)
-- 50% confident we'll reach $81M (+$40M incremental)
-- 10% confident we'll exceed $90M (+$49M incremental)
+- 90% confident we'll exceed $66M revenue (+$25M incremental)
+- 50% confident we'll reach $73M (+$32M incremental)
+- 10% confident we'll exceed $81M (+$40M incremental)
 
 ---
 
@@ -661,29 +711,33 @@ Let's stress-test the assumptions:
 **Assumptions**:
 - Assets: +15% (not 20%)
 - Trust: +10% (not 12.5%)
-- Synergy: 1.1x (not 1.4x)
-- Combined: (15% + 10%) × 1.1 = 27.5% lift
+- CvR: +4% (not +6%)
+- Synergy: 1.0x (not 1.2x - no synergy)
+- Combined CTR: (15% + 10%) × 1.0 = 25% lift
 
 **Results**:
 ```
-New CTR: 4.2% × 1.275 = 5.35%
+New CTR: 4.2% × 1.25 = 5.25%
+New CvR: 20.7% × 1.04 = 21.5%
 Impressions: 1.8M/day (only +12.5% instead of +25%)
-Revenue: 1.8M × 5.35% × $1.68 × 365 = $59M/year
-Incremental: +$18M (still 69x ROI)
+Revenue: 1.8M × 5.25% × $1.68 × 365 = $58M/year
+Incremental: +$17M (still 65x ROI)
 ```
 
 #### Scenario 2: Trust Signal Coverage is Low
 
 **Assumptions**:
 - Only 30% of advertisers have trust signal data
-- 30% get full lift (+55%), 70% get assets-only lift (+20%)
+- 30% get full lift (+40% CTR, +6% CvR), 70% get assets-only lift (+20% CTR, +0% CvR)
 
 **Results**:
 ```
-Blended CTR lift: (0.30 × 55%) + (0.70 × 20%) = 30.5%
-New CTR: 4.2% × 1.305 = 5.5%
-Revenue: 2.0M × 5.5% × $1.70 × 365 = $68M/year
-Incremental: +$27M (still 104x ROI)
+Blended CTR lift: (0.30 × 40%) + (0.70 × 20%) = 26%
+New CTR: 4.2% × 1.26 = 5.3%
+Blended CvR lift: (0.30 × 6%) = 1.8%
+New CvR: 20.7% × 1.018 = 21.1%
+Revenue: 2.0M × 5.3% × $1.68 × 365 = $65M/year
+Incremental: +$24M (still 92x ROI)
 ```
 
 #### Scenario 3: UI Clutter Hurts Message CTA
@@ -706,19 +760,20 @@ Could be neutral if sitelink clicks lead to website conversions
 #### Scenario 4: No Synergy (Purely Additive)
 
 **Assumptions**:
-- Assets: +20%
-- Trust: +12.5%
-- Synergy: 1.0x (none)
-- Combined: 32.5% lift
+- Assets: +20% CTR
+- Trust: +12.5% CTR, +6% CvR
+- Synergy: 1.0x (none - purely additive)
+- Combined CTR: 32.5% lift
 
 **Results**:
 ```
 New CTR: 4.2% × 1.325 = 5.6%
-Revenue: 2.0M × 5.6% × $1.68 × 365 = $69M/year
+New CvR: 20.7% × 1.06 = 22.0%
+Revenue: 2.0M × 5.6% × $1.70 × 365 = $69M/year
 Incremental: +$28M (still 108x ROI)
 ```
 
-**Key Takeaway**: Even in pessimistic scenarios (lower lift, no synergy, low coverage), we still see +$18-28M incremental revenue with excellent ROI.
+**Key Takeaway**: Even in pessimistic scenarios (lower lift, no synergy, low coverage), we still see +$17-28M incremental revenue with excellent ROI (65-108x).
 
 ---
 
@@ -773,22 +828,22 @@ To refine our projections, we need:
 
 ### Alternative Projection Approaches
 
-If stakeholders are uncomfortable with the 55% estimate, here are alternatives:
+If stakeholders are uncomfortable with the 40% CTR lift estimate, here are alternatives:
 
 #### Approach A: Use Range Instead of Point Estimate
 
-**Current**: "CTR will increase to 6.5% (+55% lift)"
+**Current**: "CTR will increase to 5.9% (+40% lift)"
 
-**Alternative**: "CTR will increase to **5.5-7.0%** (+31-67% lift), with base case 6.5%"
+**Alternative**: "CTR will increase to **5.5-6.3%** (+31-50% lift), with base case 5.9%"
 
 **Pros**: More honest about uncertainty
 **Cons**: Less decisive for planning
 
 #### Approach B: Use Conservative Lower Bound
 
-**Current**: Base case = 6.5% CTR ($81M revenue)
+**Current**: Base case = 5.9% CTR ($73M revenue)
 
-**Alternative**: Base case = 5.8% CTR ($75M revenue), upside = 6.5% CTR
+**Alternative**: Base case = 5.5% CTR ($68M revenue), upside = 5.9% CTR
 
 **Pros**: Under-promise, over-deliver
 **Cons**: May understate opportunity
@@ -809,20 +864,20 @@ If stakeholders are uncomfortable with the 55% estimate, here are alternatives:
 
 ### Recommendation: How to Present Uncertainty
 
-Given the uncertainty in the 55% estimate, I recommend:
+Given the uncertainty in the 40% CTR lift estimate, I recommend:
 
 **1. Lead with the Range**:
-> "We expect CTR to increase by **40-70%** (base case: 55%), bringing MFF CTR from 4.2% to **5.9-7.1%** (base case: 6.5%)"
+> "We expect CTR to increase by **30-50%** (base case: 40%), bringing MFF CTR from 4.2% to **5.5-6.3%** (base case: 5.9%)"
 
 **2. Show Scenario Table** (already in Financial Projections section):
-| Scenario | CTR Lift | New CTR | Revenue | Incremental | ROI |
-|----------|----------|---------|---------|-------------|-----|
-| Pessimistic | +30% | 5.5% | $70M | +$29M | 111x |
-| Base Case | +55% | 6.5% | $81M | +$40M | 154x |
-| Optimistic | +70% | 7.1% | $87M | +$46M | 177x |
+| Scenario | CTR Lift | New CTR | CvR | Revenue | Incremental | ROI |
+|----------|----------|---------|-----|---------|-------------|-----|
+| Pessimistic | +30% | 5.5% | 21.5% | $66M | +$25M | 96x |
+| Base Case | +40% | 5.9% | 22.0% | $73M | +$32M | 123x |
+| Optimistic | +50% | 6.3% | 22.4% | $81M | +$40M | 154x |
 
 **3. Emphasize Downside Protection**:
-> "Even if our estimates are off by 40% (actual lift is only 30% instead of 55%), we still generate +$29M incremental revenue with 111x ROI. The investment is justified across a wide range of outcomes."
+> "Even if our estimates are off by 25% (actual lift is only 30% instead of 40%), we still generate +$25M incremental revenue with 96x ROI. The investment is justified across a wide range of outcomes."
 
 **4. Commit to Early Validation**:
 > "We will validate these assumptions in Weeks 7-9 (Assets A/B test) and Weeks 12-15 (Trust Signals A/B test). If early results show lower lifts, we can adjust scope or timeline."
@@ -833,30 +888,31 @@ Given the uncertainty in the 55% estimate, I recommend:
 
 **Current State**:
 ```
-1.6M impressions/day × 4.2% CTR × $1.68 CPC × 365 = $41M/year
+1.6M impressions/day × 4.2% CTR × 20.7% CvR × $1.68 CPC × 365 = $41M/year
 ```
 
-**Projected State**:
+**Projected State (Base Case)**:
 ```
-2.0M impressions/day × 6.5% CTR × $1.70 CPC × 365 = $81M/year
+2.0M impressions/day × 5.9% CTR × 22.0% CvR × $1.70 CPC × 365 = $73M/year
 ```
 
-**Incremental**: +$40M/year
+**Incremental**: +$32M/year (range: +$25M to +$40M)
 
 **Key Assumptions**:
 1. 🟡 Assets improve CTR by +15-25% (industry benchmarks, unverified sources)
-2. 🟡 Trust signals improve CTR by +10-15% (industry benchmarks, unverified sources)
-3. 🟡 Synergy factor of 1.2-1.5x (medium confidence, logical but unproven)
-4. 🟡 Combined effect: +50-70% CTR lift (medium confidence, could be 40-80%)
-5. 🟡 Better CTR → +25% impressions (medium confidence, auction mechanics)
-6. 🟡 CPC stable at ~$1.70 (medium confidence, market dynamics)
+2. 🟡 Trust signals improve CTR by +10-15%, CvR by +5-8% (industry benchmarks, unverified sources)
+3. 🟡 CTR synergy factor of 1.2x (medium confidence, logical but unproven for MFF)
+4. 🟡 Combined effect: +30-50% CTR lift (medium confidence, base case: 40%)
+5. 🟡 Trust signals CvR lift: +5-8% (medium confidence, secondary effect)
+6. 🟡 Better CTR → +25% impressions (medium confidence, auction mechanics)
+7. 🟡 CPC stable at ~$1.70 (medium confidence, market dynamics)
 
-**Confidence in $40M Incremental**:
-- 90% confident: ≥$20M
-- 50% confident: ≥$40M
-- 10% confident: ≥$50M
+**Confidence in $32M Incremental (Base Case)**:
+- 90% confident: ≥$25M
+- 50% confident: ≥$32M
+- 10% confident: ≥$40M
 
-**Worst-Case Scenario**: If all assumptions are pessimistic (30% CTR lift, no synergy, low coverage), we still get +$18M incremental with 69x ROI. **The investment is justified even in downside scenarios.**
+**Worst-Case Scenario**: If all assumptions are pessimistic (25% CTR lift, no synergy, low coverage), we still get +$17M incremental with 65x ROI. **The investment is justified even in downside scenarios.**
 
 ---
 
@@ -1068,13 +1124,13 @@ Reassess strategy if we achieve **0 of 4**.
 
 MFF represents a strategic initiative in messaging-based conversions. Without improvement:
 - ❌ Format underperformance limits advertiser adoption
-- ❌ Missed revenue opportunity (currently $41M/year, potential $70-90M)
+- ❌ Missed revenue opportunity (currently $41M/year, potential $66-81M)
 - ❌ Competitive disadvantage in messaging ads market
 
 With MFF 2.0:
-- ✅ Close 40% of performance gap with benchmark formats (if projections hold)
+- ✅ Close 30-40% of performance gap with benchmark formats (if projections hold)
 - ✅ Establish foundation for future messaging innovations
-- ✅ Estimated $29-49M incremental annual revenue (base case: $40M)
+- ✅ Estimated $25-40M incremental annual revenue (base case: $32M)
 - ✅ Low investment ($260K one-time) with validation through A/B testing
 
 **This is a high-leverage investment opportunity with phased validation to de-risk.**
